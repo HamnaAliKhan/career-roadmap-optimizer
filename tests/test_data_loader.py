@@ -1,18 +1,22 @@
-from roadmap.data_loader import load_dataset
+import pytest
+
+from roadmap.data_loader import load_dataset, validate
+from roadmap.models import Resource
 
 
-def test_loads_sample_data():
+def test_dataset_meets_proposal_sizes():
     data = load_dataset("data")
-    assert "S01" in data.skills
+    assert len(data.skills) == 20
+    assert len(data.resources) == 30
+    assert len(data.activities) == 15
     assert len(data.months) == 6
-    assert data.student_skills == {"S01"}
+    assert len({m.hour_budget for m in data.months}) == 6  # distinct budgets
+    assert data.student_skills == {"S01", "S02"}
     assert any(r.unavailable for r in data.resources)
 
 
-# TODO (required by the proposal's Testing section):
-# - test_disconnected_skill_is_reported_unreachable   (Part A)
-# - test_unavailable_resource_is_never_chosen          (Part A)
-# - test_equal_hours_tie_break_prefers_relevance       (Part A)
-# - test_hours_over_demand_respects_month_budgets      (Part B)
-# - test_oversized_activity_is_excluded_and_reported   (Part B)
-# - test_recompute_when_resource_becomes_unavailable   (Pipeline)
+def test_validation_rejects_unknown_skill():
+    data = load_dataset("data")
+    data.resources.append(Resource("RX", "bad", "S01", "S99", 5, False))
+    with pytest.raises(ValueError, match="unknown skill S99"):
+        validate(data)

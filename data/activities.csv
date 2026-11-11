@@ -1,4 +1,16 @@
 activity_id,name,type,hours,career_value,skill_unlocked
-A01,Intro ML course,course,30,6,S01
-A02,Inventory DB project,project,40,8,S03
-A03,Backend internship,internship,80,10,S02
+A01,Data structures visualizer project,project,25,6,S03
+A02,Algorithms course,course,30,7,S04
+A03,Library management database project,project,35,8,S06
+A04,React portfolio website,project,30,7,S08
+A05,REST API for a task manager,project,20,6,S09
+A06,Backend developer internship,internship,55,10,S10
+A07,DevOps internship,internship,60,9,S12
+A08,AWS Cloud Practitioner course,course,25,8,S13
+A09,Applied statistics course,course,20,5,S14
+A10,Kaggle machine learning project,project,40,9,S15
+A11,Deep learning research internship,internship,80,10,S16
+A12,Sales data dashboard project,project,15,4,S17
+A13,Software testing course,course,10,3,S18
+A14,Embedded systems internship,internship,50,9,S19
+A15,Linux administration course,course,15,4,S11

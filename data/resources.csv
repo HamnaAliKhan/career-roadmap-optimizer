@@ -1,4 +1,31 @@
 resource_id,name,skill_a,skill_b,hours,unavailable
-R01,Python DSA course,S01,S02,20,0
-R02,Python + databases tutorial,S01,S03,15,0
-R03,Database internals book,S02,S03,25,1
+R01,Python Data Structures course,S01,S03,20,0
+R02,Algorithms MOOC,S03,S04,25,0
+R03,SQL for Python Developers,S01,S05,12,0
+R04,Database Design course,S05,S06,18,0
+R05,Web Fundamentals bootcamp,S01,S07,15,0
+R06,React official tutorial,S07,S08,20,0
+R07,Flask REST API tutorial,S09,S10,14,0
+R08,Building APIs with Python,S01,S09,15,0
+R09,Django + PostgreSQL guide,S06,S10,14,0
+R10,Linux Command Line book,S02,S11,8,0
+R11,Docker Deep Dive,S11,S12,10,0
+R12,Dockerizing Web Apps,S10,S12,10,0
+R13,AWS Cloud Practitioner prep,S12,S13,22,0
+R14,Deploying to AWS with Git,S02,S13,30,0
+R15,Statistics for Data Science,S01,S14,16,0
+R16,Intro Machine Learning course,S14,S15,35,1
+R17,Hands-on ML with Python,S01,S15,40,0
+R18,Deep Learning Specialization,S15,S16,35,0
+R19,Matplotlib and Seaborn tutorial,S14,S17,8,0
+R20,Data Visualization with Python,S01,S17,8,0
+R21,Pytest crash course,S01,S18,6,0
+R22,Testing React apps,S08,S18,12,0
+R23,Git workflows and CI testing,S02,S18,6,0
+R24,SQL Joins and query workshop,S04,S05,10,0
+R25,System Design primer,S04,S10,28,0
+R26,Kaggle Learn Pandas,S05,S14,9,0
+R27,PyTorch tutorials,S01,S16,45,0
+R28,Full-stack React and Flask,S08,S09,18,1
+R29,Embedded C for Python devs,S01,S19,30,1
+R30,FPGA design with VHDL,S19,S20,20,0
