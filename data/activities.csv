@@ -1,0 +1,4 @@
+activity_id,name,type,hours,career_value,skill_unlocked
+A01,Intro ML course,course,30,6,S01
+A02,Inventory DB project,project,40,8,S03
+A03,Backend internship,internship,80,10,S02

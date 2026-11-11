@@ -1,0 +1,4 @@
+resource_id,name,skill_a,skill_b,hours,unavailable
+R01,Python DSA course,S01,S02,20,0
+R02,Python + databases tutorial,S01,S03,15,0
+R03,Database internals book,S02,S03,25,1
