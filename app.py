@@ -22,12 +22,9 @@ def html(markup: str) -> None:
                 unsafe_allow_html=True)
 
 
-@st.cache_data
-def base_data():
-    return load_dataset(Path(__file__).parent / "data")
-
-
-data = base_data()
+# Loaded fresh on every run (five tiny CSVs) so edits to data/ always show up;
+# st.cache_data would keep serving the old files after they change.
+data = load_dataset(Path(__file__).parent / "data")
 skill_name = {sid: s.name for sid, s in data.skills.items()}
 resource_by_id = {r.resource_id: r for r in data.resources}
 
