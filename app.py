@@ -115,7 +115,8 @@ with tab_plan:
     html('<div class="months">' + "".join(cards) + "</div>")
 
     excluded = (
-        [(x, "t-rose", f"Skill {skill_name[x.skill_unlocked]} is unreachable") for x in b.ineligible]
+        [(x, "t-accent", f"Already know {skill_name[x.skill_unlocked]}") for x in b.already_known]
+        + [(x, "t-rose", f"Skill {skill_name[x.skill_unlocked]} is unreachable") for x in b.ineligible]
         + [(x, "t-internship", "Longer than every month's budget") for x in b.oversized]
         + [(x, "t-muted", "Did not fit in the optimal plan") for x in b.unscheduled])
     if excluded:

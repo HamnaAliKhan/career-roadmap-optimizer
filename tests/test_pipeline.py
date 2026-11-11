@@ -35,6 +35,29 @@ def test_recompute_when_skill_gets_cut_off(data):
     assert "A07" in {a.activity_id for a in after.part_b.ineligible}
 
 
+def _plan(data, skills):
+    from dataclasses import replace
+    rm = build_roadmap(replace(data, student_skills=set(skills)))
+    return rm, {m: [a.activity_id for a in acts] for m, acts in rm.part_b.schedule.items()}
+
+
+def test_roadmap_depends_on_starting_skills(data):
+    full, plan_full = _plan(data, {"S01", "S02", "S05"})     # programming + SQL
+    prog, plan_prog = _plan(data, {"S01", "S02"})            # data cluster cut off
+    stats, plan_stats = _plan(data, {"S14"})                 # data cluster only
+    assert len(full.part_a.reachable_skills) > len(prog.part_a.reachable_skills) > len(stats.part_a.reachable_skills)
+    assert plan_full != plan_prog != plan_stats
+    assert "S15" in prog.part_a.unreachable_skills           # ML needs the data cluster
+    assert "S10" in stats.part_a.unreachable_skills          # backend not reachable from stats
+
+
+def test_known_skills_free_hours_for_new_activities(data):
+    rm, plan = _plan(data, {"S01", "S03", "S04", "S10"})
+    scheduled = {a for acts in plan.values() for a in acts}
+    assert {a.activity_id for a in rm.part_b.already_known} == {"A01", "A02", "A06"}
+    assert not scheduled & {"A01", "A02", "A06"}
+
+
 def test_unknown_resource_id_is_rejected(data):
     with pytest.raises(ValueError):
         recompute_with_unavailable(data, {"R99"})

@@ -40,7 +40,7 @@ def test_dp_matches_brute_force_on_random_cases():
 
 def test_hours_over_demand_respects_month_budgets():
     acts = [act(f"X{i}", 6, i + 1, "A") for i in range(5)]  # 30h demand
-    data = dataset([skill("A")], activities=acts, budgets=(10, 7))  # 17h supply
+    data = dataset([skill("A")], activities=acts, budgets=(10, 7), student=())  # 17h supply
     b = run_part_b(data, {"A"})
     assert all(b.hours_used[m] <= b.budgets[m] for m in b.budgets)
     assert b.total_value == 5 + 4  # only two 6h items fit, one per month
@@ -49,7 +49,7 @@ def test_hours_over_demand_respects_month_budgets():
 
 def test_oversized_activity_is_excluded_and_reported():
     data = dataset([skill("A")], activities=[act("big", 50, 99, "A"), act("ok", 5, 1, "A")],
-                   budgets=(20, 30))
+                   budgets=(20, 30), student=())
     b = run_part_b(data, {"A"})
     assert [x.activity_id for x in b.oversized] == ["big"]
     assert b.total_value == 1
@@ -57,19 +57,27 @@ def test_oversized_activity_is_excluded_and_reported():
 
 def test_unreachable_skill_makes_activity_ineligible():
     data = dataset([skill("A"), skill("B")],
-                   activities=[act("x", 5, 9, "B"), act("y", 5, 1, "A")])
+                   activities=[act("x", 5, 9, "B"), act("y", 5, 1, "A")], student=())
     b = run_part_b(data, {"A"})
     assert [x.activity_id for x in b.ineligible] == ["x"]
     assert b.total_value == 1
 
 
+def test_activity_for_known_skill_is_excluded():
+    data = dataset([skill("A"), skill("B")],
+                   activities=[act("known", 5, 9, "A"), act("new", 5, 1, "B")])
+    b = run_part_b(data, {"A", "B"})               # student knows A
+    assert [x.activity_id for x in b.already_known] == ["known"]
+    assert b.total_value == 1
+
+
 def test_each_activity_in_at_most_one_month():
-    data = dataset([skill("A")], activities=[act("x", 5, 9, "A")], budgets=(10, 10, 10))
+    data = dataset([skill("A")], activities=[act("x", 5, 9, "A")], budgets=(10, 10, 10), student=())
     b = run_part_b(data, {"A"})
     assert sum(len(v) for v in b.schedule.values()) == 1
 
 
 def test_month_with_zero_budget():
-    data = dataset([skill("A")], activities=[act("x", 5, 9, "A")], budgets=(0, 5))
+    data = dataset([skill("A")], activities=[act("x", 5, 9, "A")], budgets=(0, 5), student=())
     b = run_part_b(data, {"A"})
     assert b.schedule[1] == [] and [x.activity_id for x in b.schedule[2]] == ["x"]

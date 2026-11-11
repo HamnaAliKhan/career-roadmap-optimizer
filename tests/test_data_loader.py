@@ -11,7 +11,7 @@ def test_dataset_meets_proposal_sizes():
     assert len(data.activities) == 15
     assert len(data.months) == 6
     assert len({m.hour_budget for m in data.months}) == 6  # distinct budgets
-    assert data.student_skills == {"S01", "S02"}
+    assert data.student_skills == {"S01", "S02", "S05"}
     assert any(r.unavailable for r in data.resources)
 
 

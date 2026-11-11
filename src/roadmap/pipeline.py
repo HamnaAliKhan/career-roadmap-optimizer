@@ -75,13 +75,15 @@ def format_roadmap(rm: Roadmap) -> str:
 
     out.append("EXCLUDED ACTIVITIES")
     out.append("-" * 72)
+    for act in b.already_known:
+        out.append(f"  {act.activity_id}  {act.name}: student already knows {data.skills[act.skill_unlocked].name}")
     for act in b.ineligible:
         out.append(f"  {act.activity_id}  {act.name}: skill {data.skills[act.skill_unlocked].name} is unreachable")
     for act in b.oversized:
         out.append(f"  {act.activity_id}  {act.name}: needs {act.hours}h, more than every month's budget")
     for act in b.unscheduled:
         out.append(f"  {act.activity_id}  {act.name}: did not fit in the optimal plan ({act.hours}h)")
-    if not (b.ineligible or b.oversized or b.unscheduled):
+    if not (b.already_known or b.ineligible or b.oversized or b.unscheduled):
         out.append("  none")
     out.append(line)
     return "\n".join(out)

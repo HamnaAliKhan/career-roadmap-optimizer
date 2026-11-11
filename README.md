@@ -40,8 +40,14 @@ pytest                                  # unit tests
 | `months.csv` | 6 | month, hour_budget (all different) |
 | `student.csv` | — | skill_id (the student's current skills) |
 
+The skill graph has clusters: core programming + web, systems/cloud, data science, and
+hardware. The resources leading from programming into data science (R03, R09, R15) are
+unavailable, so the starting skills decide what is reachable. For example, Python + Git reaches 12
+skills, while adding SQL opens the data cluster (18 skills).
+
 Built-in test cases: Embedded C / VHDL are disconnected (R29 unavailable), R21/R23 tie at 6 h,
-A11 (80 h) exceeds every month, and eligible activities need 380 h against 280 h of budget.
+A11 (80 h) exceeds every month, and for the default student (Python, Git, SQL) the eligible
+activities need 380 h against 280 h of budget.
 
 ## Constraints implemented
 
@@ -49,6 +55,7 @@ A11 (80 h) exceeds every month, and eligible activities need 380 h against 280 h
 - Each activity is scheduled in at most one month.
 - Unavailable resources are never used.
 - An activity is allowed only if its skill is reachable from the student's current skills.
+- An activity whose skill the student already has is skipped and reported as "already known".
 - An activity longer than every month's limit is excluded and reported.
 - Equal-hour resources: the one linking higher-relevance skills is chosen (sum of both skills'
   relevance). If relevance is also equal, the one linking higher-demand skills wins.

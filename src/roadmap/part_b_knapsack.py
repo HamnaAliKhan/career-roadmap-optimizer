@@ -6,6 +6,8 @@ Each activity is placed in at most one month, or not taken.
 
 Filtering (before the DP)
 -------------------------
+- Already known: the student already has the skill the activity unlocks,
+  so it adds nothing new.
 - Ineligible: the activity's skill is not reachable (from Part A).
 - Oversized:  the activity needs more hours than every month's budget.
 Both are excluded and reported.
@@ -43,6 +45,7 @@ class PartBResult:
     hours_used: dict[int, int] = field(default_factory=dict)
     budgets: dict[int, int] = field(default_factory=dict)
     total_value: int = 0
+    already_known: list[Activity] = field(default_factory=list)  # student already has the skill
     ineligible: list[Activity] = field(default_factory=list)   # skill not reachable
     oversized: list[Activity] = field(default_factory=list)    # longer than every month
     unscheduled: list[Activity] = field(default_factory=list)  # eligible but didn't fit
@@ -108,7 +111,9 @@ def run_part_b(data: Dataset, reachable_skills: set[str]) -> PartBResult:
 
     candidates: list[Activity] = []
     for a in data.activities:
-        if a.skill_unlocked not in reachable_skills:
+        if a.skill_unlocked in data.student_skills:
+            result.already_known.append(a)
+        elif a.skill_unlocked not in reachable_skills:
             result.ineligible.append(a)
         elif a.hours > max_budget:
             result.oversized.append(a)

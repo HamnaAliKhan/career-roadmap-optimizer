@@ -80,7 +80,8 @@ def test_known_skills_cost_nothing_to_connect():
 
 def test_real_dataset():
     from roadmap.data_loader import load_dataset
-    a = run_part_a(load_dataset("data"))
+    data = load_dataset("data")
+    a = run_part_a(data)
     assert a.unreachable_skills == {"S19", "S20"}
-    # a spanning tree over k reachable skills with the student's skills pre-joined
-    assert len(a.chosen_resources) == len(a.reachable_skills) - 2
+    # a spanning tree over the reachable skills, with the student's skills pre-joined
+    assert len(a.chosen_resources) == len(a.reachable_skills) - len(data.student_skills)
