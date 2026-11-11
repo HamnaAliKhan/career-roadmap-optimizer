@@ -61,7 +61,8 @@ with st.sidebar:
     st.caption("Already unavailable in the dataset: " + (", ".join(already_off) or "none"))
 
 if not current:
-    st.warning("Select at least one current skill in the sidebar to build a roadmap.")
+    html('<div class="banner t-internship">Select at least one current skill in the sidebar '
+         'to build a roadmap.</div>')
     st.stop()
 
 run_data = with_unavailable(replace(data, student_skills=set(current)), set(extra_off))
