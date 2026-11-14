@@ -210,8 +210,8 @@ tests/                       Unit tests for loading, algorithms, and pipeline
 
 - **Hamna Ali Khan** · [GitHub](https://github.com/HamnaAliKhan)
 - **Amna Mohsin** · [GitHub](https://github.com/amna-mohsin)
-- **Tayyaba Ahmed**
-- **Javeria Irfan Ali** 
+- **Tayyaba Ahmed** · [GitHub](https://github.com/tayyaba-ahmed)
+- **Javeria Irfan Ali** · [GitHub](https://github.com/javeriairfanali)
 
 ## License
 
