@@ -74,10 +74,7 @@ def go_home() -> None:
 
 # ---- Theme + sidebar -----------------------------------------------------------
 if "dark" not in st.session_state:
-    try:
-        st.session_state.dark = st.context.theme.type == "dark"
-    except Exception:
-        st.session_state.dark = False
+    st.session_state.dark = False   # always open in light mode; the toggle switches to dark
 
 with st.sidebar:
     html('<div class="brand">🧭 Roadmap Optimizer</div>'
