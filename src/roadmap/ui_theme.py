@@ -122,6 +122,12 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 .month { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 1.1rem;
   box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .65rem; }
 [data-testid="stColumn"]:has(.month) [data-testid="stButton"] { margin-top: .55rem; }
+/* month rows (app.py keys them month-row-*): cards in a row grow to equal height so the buttons line up */
+[class*="st-key-month-row"] [data-testid="stColumn"] > [data-testid="stVerticalBlock"] { height: 100%; }
+[class*="st-key-month-row"] [data-testid="stElementContainer"]:has(.month) { flex: 1 1 auto; }
+[class*="st-key-month-row"] [data-testid="stElementContainer"]:has(.month) div:has(.month) { height: 100%; align-items: stretch; margin-bottom: 0; }
+[class*="st-key-month-row"] .month { height: 100%; box-sizing: border-box; }
+[class*="st-key-month-row"] .month > * { flex-shrink: 0; }
 .month-head { display: flex; justify-content: space-between; align-items: baseline; }
 .month-name { font-weight: 700; font-size: 1.05rem; color: var(--text); }
 .month-hours { font-size: .82rem; color: var(--muted); font-weight: 600; }

@@ -226,7 +226,8 @@ with tab_plan:
          '<span class="t-muted"><i class="dot"></i>Revision</span></div>')
     html('<div class="section-note">Open a month to see its activities, study resources and deliverables.</div>')
     for row in range(0, len(rm.months), 3):
-        cols = st.columns(3)
+        # keyed container: ui_theme.py gives the cards in a row equal heights so the buttons line up
+        cols = st.container(key=f"month-row-{row}").columns(3)
         for col, m in zip(cols, rm.months[row:row + 3]):
             pct = 100 * m.hours_used / m.budget if m.budget else 0
             items = "".join(
