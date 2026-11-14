@@ -65,13 +65,22 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 [data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: var(--muted) !important; }
 [data-testid="stSidebarCollapseButton"] *, [data-testid="stExpandSidebarButton"] * { color: var(--muted) !important; }
 
+/* headings, captions, and labels are not text fields — keep the arrow, not the I-beam */
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] *,
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] *,
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"],
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] * { cursor: default !important; user-select: none; }
+
 /* selectbox / multiselect are searchable <input>s; use pointer so they read as dropdowns */
 [data-testid="stSelectbox"] .react-aria-ComboBox,
 [data-testid="stSelectbox"] input,
 [data-testid="stMultiSelect"] .react-aria-ComboBox,
 [data-testid="stMultiSelect"] [role="group"],
 [data-testid="stMultiSelect"] [data-testid="stMultiSelectTagsContainer"],
-[data-testid="stMultiSelect"] input { cursor: pointer !important; }
+[data-testid="stMultiSelect"] input,
+[data-testid="stToggle"] { cursor: pointer !important; }
 
 /* multiselect (react-aria combobox) */
 [data-testid="stMultiSelect"] .react-aria-ComboBox > div[role="group"] { background: var(--surface2) !important;
