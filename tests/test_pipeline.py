@@ -54,9 +54,14 @@ def test_roadmap_depends_on_starting_skills(data):
 def test_known_skills_free_hours_for_new_activities(data):
     rm, plan = _plan(data, {"S01", "S03", "S04", "S10"})
     scheduled = {a for acts in plan.values() for a in acts}
+<<<<<<< HEAD
     known_acts = {"A01", "A02", "A06", "A12"}                  # A12 = Python course (S01 is known)
     assert {a.activity_id for a in rm.part_b.already_known} == known_acts
     assert not scheduled & known_acts
+=======
+    assert {a.activity_id for a in rm.part_b.already_known} == {"A01", "A02", "A06"}
+    assert not scheduled & {"A01", "A02", "A06"}
+>>>>>>> origin/main
 
 
 def test_unknown_resource_id_is_rejected(data):

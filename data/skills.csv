@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 skill_id,name,category,level,relevance,demand,tip,topics
 S01,Python,Programming,1,9,9,Type every example yourself; reading code is not the same as writing it.,"Syntax, variables and control flow;Functions and modules;Lists, dicts, sets and comprehensions;Files and exception handling;Object-oriented basics (classes, methods);Virtual environments and pip"
 S02,Git & GitHub,Tools,1,7,8,"Commit small and often; a good message says why, not just what.","git init, add, commit, log, status;Branches: create, switch, merge;Resolving a merge conflict;Remotes: clone, push, pull, fetch;Pull requests and code review on GitHub;.gitignore, README and GitHub Pages"
@@ -19,3 +20,26 @@ S17,Data Visualization,Data Science,3,6,6,"One chart, one message; remove everyt
 S18,Software Testing,Programming,2,6,7,Write the failing test first; it clarifies what 'done' means.,Unit tests with pytest;Test-driven development;Mocking and fixtures;Code coverage;Integration tests;Running tests in CI
 S19,Embedded C,Hardware,3,5,4,Keep the datasheet open; every register has a reason.,"Pointers and memory layout;Bitwise operations;GPIO and timers;Interrupts;UART, I2C and SPI;Debugging on hardware"
 S20,VHDL,Hardware,4,4,3,Simulate everything before you ever synthesize.,Entity and architecture;Combinational vs sequential logic;Finite state machines;Testbenches;Simulation waveforms;FPGA synthesis flow
+=======
+skill_id,name,relevance,demand
+S01,Python,9,9
+S02,Git,7,8
+S03,Data Structures,9,7
+S04,Algorithms,9,7
+S05,SQL,8,9
+S06,Database Design,8,8
+S07,Web Fundamentals,6,7
+S08,React,7,8
+S09,REST APIs,8,8
+S10,Backend Frameworks,8,8
+S11,Linux,7,7
+S12,Docker,7,8
+S13,Cloud (AWS),8,9
+S14,Statistics,7,6
+S15,Machine Learning,9,9
+S16,Deep Learning,8,8
+S17,Data Visualization,6,6
+S18,Software Testing,6,7
+S19,Embedded C,5,4
+S20,VHDL,4,3
+>>>>>>> origin/main

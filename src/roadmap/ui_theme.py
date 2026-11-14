@@ -7,7 +7,11 @@ component and the restyled Streamlit widgets read from these variables.
 LIGHT = {
     "bg": "#F7F5F2", "surface": "#FFFFFF", "surface2": "#F2EFEA",
     "text": "#2F2B36", "muted": "#77707F", "border": "#E7E2DB",
+<<<<<<< HEAD
     "accent": "#7566C3", "accent-soft": "#ECE8FA", "button-text": "#FFFFFF",
+=======
+    "accent": "#8B7FD1", "accent-soft": "#ECE8FA",
+>>>>>>> origin/main
     "sage": "#5E9E87", "sage-soft": "#E3F2EC",
     "peach": "#D98B6C", "peach-soft": "#FCEBE3",
     "sky": "#5F93C4", "sky-soft": "#E4EFF9",
@@ -18,7 +22,11 @@ LIGHT = {
 DARK = {
     "bg": "#1B1A21", "surface": "#24232C", "surface2": "#2D2C36",
     "text": "#ECE9F2", "muted": "#A39EAE", "border": "#383642",
+<<<<<<< HEAD
     "accent": "#A99BF0", "accent-soft": "#363150", "button-text": "#1B1A21",
+=======
+    "accent": "#A99BF0", "accent-soft": "#363150",
+>>>>>>> origin/main
     "sage": "#8FCBB6", "sage-soft": "#233730",
     "peach": "#F2B49B", "peach-soft": "#3D2D27",
     "sky": "#9CC3E8", "sky-soft": "#233243",
@@ -41,6 +49,7 @@ CSS = """
 .block-container { padding-top: 2.2rem; max-width: 1200px; }
 .stApp p, .stApp li, .stApp label, .stApp h1, .stApp h2, .stApp h3, .stApp h4 { color: var(--text); }
 
+<<<<<<< HEAD
 /* ---------- action buttons ---------- */
 [data-testid="stButton"] > button {
   min-height: 2.7rem; padding: .55rem 1rem; border: 1px solid transparent !important;
@@ -59,6 +68,8 @@ CSS = """
   outline: 3px solid var(--sky) !important; outline-offset: 2px;
 }
 
+=======
+>>>>>>> origin/main
 /* ---------- sidebar ---------- */
 section[data-testid="stSidebar"] { background: var(--surface); border-right: 1px solid var(--border); }
 section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var(--text) !important; }
@@ -95,7 +106,11 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 /* ---------- custom components ---------- */
 .hero { background: linear-gradient(135deg, var(--accent-soft), var(--sky-soft) 55%, var(--sage-soft));
   border: 1px solid var(--border); border-radius: 22px; padding: 1.8rem 2rem; margin-bottom: 1.4rem; }
+<<<<<<< HEAD
 .hero .eyebrow { font-size: .85rem; color: var(--muted); font-weight: 600; }
+=======
+.hero .eyebrow { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+>>>>>>> origin/main
 .hero h1 { font-size: 2.1rem; font-weight: 800; margin: .3rem 0 .4rem; color: var(--text); letter-spacing: -.02em; padding: 0; }
 .hero p { color: var(--muted) !important; margin: 0 0 1rem; max-width: 46rem; }
 
@@ -121,7 +136,10 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 .months { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; }
 .month { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 1.1rem;
   box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .65rem; }
+<<<<<<< HEAD
 [data-testid="stColumn"]:has(.month) [data-testid="stButton"] { margin-top: .55rem; }
+=======
+>>>>>>> origin/main
 .month-head { display: flex; justify-content: space-between; align-items: baseline; }
 .month-name { font-weight: 700; font-size: 1.05rem; color: var(--text); }
 .month-hours { font-size: .82rem; color: var(--muted); font-weight: 600; }
@@ -133,7 +151,11 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 .act-name { font-weight: 650; color: var(--text); font-size: .93rem; }
 .act-meta { color: var(--muted); font-size: .8rem; margin-top: .15rem; }
 .act-val { font-weight: 700; font-size: .82rem; color: var(--tone); }
+<<<<<<< HEAD
 .pill { font-size: .74rem; font-weight: 700; padding: .15rem .55rem;
+=======
+.pill { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .15rem .5rem;
+>>>>>>> origin/main
   border-radius: 6px; background: var(--tone-soft); color: var(--tone); }
 .empty { color: var(--muted); font-size: .85rem; text-align: center; padding: 1rem; border: 1px dashed var(--border); border-radius: 12px; }
 
@@ -152,17 +174,23 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 .row { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: .8rem; align-items: center; padding: .8rem 1.1rem;
   border-bottom: 1px solid var(--border); }
 .row:last-child { border-bottom: none; }
+<<<<<<< HEAD
 .row:hover { background: var(--surface2); }
+=======
+>>>>>>> origin/main
 .row .id { font-weight: 700; color: var(--muted); font-size: .82rem; }
 .row .main { color: var(--text); font-weight: 600; font-size: .92rem; }
 .row .sub { color: var(--muted); font-size: .8rem; font-weight: 500; margin-top: .15rem; }
 .row .right { font-weight: 700; color: var(--text); font-size: .9rem; white-space: nowrap; }
+<<<<<<< HEAD
 .reason { max-width: 20rem; padding: .35rem .65rem; border-radius: 7px; text-align: center;
   font-size: .68rem; line-height: 1.35; font-weight: 800; letter-spacing: .035em; text-transform: uppercase; }
 .reason.t-rose { background: var(--rose-soft); color: var(--rose); }
 .reason.t-peach { background: var(--peach-soft); color: var(--peach); }
 .reason.t-sage { background: var(--sage-soft); color: var(--sage); }
 .reason.t-muted { background: var(--surface2); color: var(--muted); }
+=======
+>>>>>>> origin/main
 
 .trace { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .82rem; line-height: 1.7; }
 .trace .take { color: var(--sage); } .trace .skip { color: var(--muted); }
@@ -177,6 +205,7 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 
 .brand { font-weight: 800; font-size: 1.15rem; color: var(--text); margin-bottom: .1rem; }
 .brand-sub { color: var(--muted); font-size: .82rem; margin-bottom: 1rem; }
+<<<<<<< HEAD
 /* ---------- roadmap guide ---------- */
 .act-head { display: flex; justify-content: space-between; align-items: center; gap: .6rem; flex-wrap: wrap; }
 .act-title { font-weight: 750; font-size: 1.08rem; color: var(--text); margin: .35rem 0 .15rem; }
@@ -197,5 +226,7 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
   .row .reason, .row .tag, .row .right { grid-column: 2; justify-self: start; }
   .reason { max-width: 100%; text-align: left; }
 }
+=======
+>>>>>>> origin/main
 </style>
 """
