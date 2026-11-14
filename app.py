@@ -213,7 +213,7 @@ html('<div class="metrics">' + "".join(
     f'<div class="sub">{sub}</div></div>' for tone, label, value, sub in metrics) + "</div>")
 
 tab_plan, tab_learn, tab_skills, tab_tests = st.tabs(
-    ["🗺️ Roadmap", "📚 Learning path", "🧩 Skills", "✅ Tests"])
+    ["Roadmap", "Learning path", "Skills", "Tests"])
 
 # ---- Roadmap ----------------------------------------------------------------
 with tab_plan:
