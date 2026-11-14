@@ -74,7 +74,7 @@ Student skills + CSV dataset
  Highest-value activities within each month's budget
              │
              ▼
- Foundations-first roadmap + report
+ Foundations-first roadmap 
 ```
 
 ### Part A — Greedy minimum spanning tree
