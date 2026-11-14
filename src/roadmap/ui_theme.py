@@ -164,7 +164,7 @@ section[data-testid="stSidebar"] p, [data-testid="stWidgetLabel"] p { color: var
 .reason.t-sage { background: var(--sage-soft); color: var(--sage); }
 .reason.t-muted { background: var(--surface2); color: var(--muted); }
 
-.trace { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .82rem; line-height: 1.7; }
+.trace { font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: .82rem; line-height: 1.7; }
 .trace .take { color: var(--sage); } .trace .skip { color: var(--muted); }
 
 .test { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 1rem 1.2rem;

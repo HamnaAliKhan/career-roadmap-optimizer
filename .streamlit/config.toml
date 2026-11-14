@@ -4,6 +4,9 @@ primaryColor = "#8B7FD1"
 backgroundColor = "#F7F5F2"
 secondaryBackgroundColor = "#FFFFFF"
 textColor = "#2F2B36"
+# IBM Plex: a plain, even typeface; falls back to the system font when offline.
+font = "IBM Plex Sans:https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap, sans-serif"
+codeFont = "IBM Plex Mono:https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap, monospace"
 
 [client]
 toolbarMode = "minimal"
