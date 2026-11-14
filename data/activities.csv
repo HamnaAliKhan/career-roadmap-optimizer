@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 activity_id,name,type,hours,career_value,skill_unlocked,deliverable,syllabus
 A01,Data structures visualizer project,project,25,6,S03,"An app that animates stack, queue, BST and graph operations step by step.","Plan: choose the structures to show (stack, queue, BST, graph) and sketch each screen;Build a stack and a queue class with push/pop and enqueue/dequeue;Build a binary search tree with insert, search and in-order traversal;Store a graph as an adjacency list and add BFS and DFS;Create the interface that animates every operation one step at a time;Add input checks, a reset button and an undo button;Test each structure with edge cases: empty, one item, duplicates;Write the README with screenshots and push the project to GitHub"
 A02,Algorithms course,course,30,7,S04,"20 solved problems with notes: 5 sorting/searching, 5 recursion, 5 greedy, 5 DP.","Big-O: count operations and classify loops and recursive functions;Sorting: implement merge sort and quicksort and compare their running times;Searching: binary search and the invariant that keeps it correct;Recursion and divide and conquer: solve 5 problems;Greedy: interval scheduling and Kruskal's minimum spanning tree;Dynamic programming: 0/1 knapsack and longest common subsequence;Graph algorithms: BFS, DFS and Dijkstra's shortest path;Mock test: 5 mixed problems under a time limit, then review every mistake"
@@ -15,21 +14,3 @@ A12,Python fundamentals course,course,20,6,S01,"A command-line expense tracker u
 A13,Git & GitHub basics course,course,10,5,S02,"A public repo with a README, 10+ clear commits, a feature branch and one merged pull request.","Install Git, set your name and email, make your first commit;Stage, commit and read history with log and diff;Create a branch, work on it and merge it;Cause a merge conflict on purpose and resolve it;Create a GitHub repository, push to it and clone it;Open a pull request and review one;Add a .gitignore and a README;Publish a page with GitHub Pages"
 A14,FPGA design internship,internship,50,9,S20,"A VHDL design with a testbench, simulated and running on an FPGA board.","Onboarding: install the simulator and learn the board's toolchain;Write a first design: entity and architecture for a simple gate circuit;Build a counter and test it in simulation;Design a finite state machine, for example a traffic-light controller;Write a testbench and check the waveforms;Synthesize the design and fix timing warnings;Program the FPGA board and record a demo;Write the project report"
 A15,Linux administration course,course,15,4,S11,A cron-scheduled backup shell script plus a file-permissions cheat sheet.,"Move around the filesystem and understand permissions;Processes and signals: list, watch and stop them;Pipes, grep and redirection;Write your first shell script;Connect to a remote machine with SSH;Install software with a package manager;Schedule the backup script with cron;Write the file-permissions cheat sheet"
-=======
-activity_id,name,type,hours,career_value,skill_unlocked
-A01,Data structures visualizer project,project,25,6,S03
-A02,Algorithms course,course,30,7,S04
-A03,Library management database project,project,35,8,S06
-A04,React portfolio website,project,30,7,S08
-A05,REST API for a task manager,project,20,6,S09
-A06,Backend developer internship,internship,55,10,S10
-A07,DevOps internship,internship,60,9,S12
-A08,AWS Cloud Practitioner course,course,25,8,S13
-A09,Applied statistics course,course,20,5,S14
-A10,Kaggle machine learning project,project,40,9,S15
-A11,Deep learning research internship,internship,80,10,S16
-A12,Sales data dashboard project,project,15,4,S17
-A13,Software testing course,course,10,3,S18
-A14,Embedded systems internship,internship,50,9,S19
-A15,Linux administration course,course,15,4,S11
->>>>>>> origin/main
